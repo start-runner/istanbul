@@ -1,6 +1,6 @@
 {
   "name": "start-coverage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Code coverage tasks for Start",
   "keywords": [ "start-task", "coverage", "istanbul" ],
   "homepage": "https://github.com/start-runner/coverage",
