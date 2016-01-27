@@ -12,9 +12,9 @@
   "files": [ "build/" ],
   "main": "build/index.js",
   "dependencies": {
-    "globby": "4.0.x",
-    "istanbul": "0.4.2",
-    "babel-runtime": "6.3.x"
+    "globby": "4.x.x",
+    "istanbul": "0.x.x",
+    "babel-runtime": "6.x.x"
   },
   "devDependencies": {
     "husky": "0.10.x",
