@@ -12,7 +12,7 @@ npm i -D start-coverage
 
 ## Usage
 
-The sequence of tasks is simple: "instrument" sources, run tests and then report collected code coverage.
+The sequence of tasks is simple: "instrument" sources, run tests, report collected code coverage and then check result against the provided thresholds (optional).
 
 ```js
 // tasks/index.js
@@ -23,7 +23,8 @@ export const test = [
     ...
     coverage.instrument('lib/**/*.js'),
     mocha('test/**/*.js'),
-    coverage.report([ 'lcovonly', 'html', 'text-summary' ])
+    coverage.report([ 'lcovonly', 'html', 'text-summary' ]),
+    coverage.thresholds({ functions: 100 }) // optional task
     ...
 ];
 ```
@@ -53,3 +54,20 @@ export const test = [
 * `reporters` – `[ 'lcovonly', 'text-summary' ]` by default
 * `dir` – output directory, `coverage/` by default
 * `options` – reporter options, none by default
+
+### thresholds
+
+`coverage.thresholds(thresholds)`
+
+Same as [istanbul `check-coverage` command](https://github.com/gotwarlost/istanbul#the-check-coverage-command):
+
+> Checks the coverage of `statements`, `functions`, `branches`, and `lines` against the provided thresholds. Positive thresholds are taken to be the minimum percentage required and negative numbers are taken to be the number of uncovered entities allowed.
+
+Only defined keys will be processed:
+
+```js
+{
+    statements: 100,
+    functions: -10
+}
+```
