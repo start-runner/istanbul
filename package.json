@@ -1,10 +1,10 @@
 {
-  "name": "start-babel-istanbul",
+  "name": "start-coverage",
   "version": "0.1.0",
-  "description": "Babel Istanbul tasks for Start",
-  "keywords": [ "tasks", "runner", "start", "babel-istanbul" ],
-  "homepage": "https://github.com/start-runner/babel-istanbul",
-  "repository": "start-runner/babel-istanbul",
+  "description": "Code coverage tasks for Start",
+  "keywords": [ "start-task", "coverage", "istanbul" ],
+  "homepage": "https://github.com/start-runner/coverage",
+  "repository": "start-runner/coverage",
   "contributors": [
     "Kir Belevich <kir@soulshine.in> (https://github.com/deepsweet)",
     "Denis Koltsov <iam@mistadikay.com> (https://github.com/mistadikay)"
@@ -13,7 +13,7 @@
   "main": "build/index.js",
   "dependencies": {
     "globby": "4.0.x",
-    "babel-istanbul": "0.6.x",
+    "istanbul": "0.4.2",
     "babel-runtime": "6.3.x"
   },
   "devDependencies": {
