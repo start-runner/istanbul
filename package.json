@@ -11,6 +11,9 @@
   ],
   "files": [ "build/" ],
   "main": "build/index.js",
+  "peerDependencies": {
+    "start": "2.x.x"
+  },
   "dependencies": {
     "globby": "4.x.x",
     "istanbul": "0.x.x"
