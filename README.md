@@ -16,17 +16,21 @@ The sequence of tasks is simple: "instrument" sources, run tests, report collect
 
 ```js
 // tasks/index.js
+import start from 'start';
+import logger from 'start-simple-logger';
 import coverage from 'start-coverage';
 import mocha from 'start-mocha';
 
-export const test = [
-    ...
-    coverage.instrument('lib/**/*.js'),
-    mocha('test/**/*.js'),
-    coverage.report([ 'lcovonly', 'html', 'text-summary' ]),
-    coverage.thresholds({ functions: 100 }) // optional task
-    ...
-];
+export function test() {
+    return start(logger)(
+        ...
+        coverage.instrument('lib/**/*.js'),
+        mocha('test/**/*.js'),
+        coverage.report([ 'lcovonly', 'html', 'text-summary' ]),
+        coverage.thresholds({ functions: 100 }) // optional task
+        ...
+    );
+}
 ```
 
 ```js
