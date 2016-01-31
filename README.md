@@ -18,17 +18,20 @@ The sequence of tasks is simple: "instrument" sources, run tests, report collect
 // tasks/index.js
 import start from 'start';
 import logger from 'start-simple-logger';
-import coverage from 'start-coverage';
+import clean from 'start-clean';
+import * as coverage from 'start-coverage';
 import mocha from 'start-mocha';
 
-export function test() {
+export function coverage() {
     return start(logger)(
-        ...
-        coverage.instrument('lib/**/*.js'),
-        mocha('test/**/*.js'),
+        files('coverage/'),
+        clean(),
+        files('lib/**/*.js'),
+        coverage.instrument(),
+        files('test/**/*.js')
+        mocha(),
         coverage.report([ 'lcovonly', 'html', 'text-summary' ]),
-        coverage.thresholds({ functions: 100 }) // optional task
-        ...
+        coverage.thresholds({ functions: 100 })
     );
 }
 ```
@@ -37,7 +40,7 @@ export function test() {
 // package.json
 "scripts": {
   "task": "babel-node node_modules/.bin/start tasks/",
-  "test": "npm run task test"
+  "coverage": "npm run task coverage"
 }
 ```
 
@@ -45,19 +48,17 @@ export function test() {
 
 ### instrument
 
-`coverage.instrument(patterns, istanbul, options)`
+`coverage.instrument(istanbul, options)`
 
-* `patterns` – [globby patterns](https://github.com/sindresorhus/globby)
 * `istanbul` – istanbul-compatible coverage tool, `require('istanbul')` by default
 * `options` – [Instrumenter options](https://gotwarlost.github.io/istanbul/public/apidocs/classes/Instrumenter.html#method_Instrumenter), `{ embedSource: true, noAutoWrap: true }` by default
 
 ### report
 
-`coverage.report(reporters, dir, options)`
+`coverage.report(reporters, dir)`
 
 * `reporters` – `[ 'lcovonly', 'text-summary' ]` by default
 * `dir` – output directory, `coverage/` by default
-* `options` – reporter options, none by default
 
 ### thresholds
 
