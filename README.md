@@ -14,6 +14,8 @@ npm i -D start-coverage
 
 The sequence of tasks is simple: "instrument" sources, run tests, report collected code coverage and then check result against the provided thresholds (optional).
 
+Instrument tasks is rely on array of files.
+
 ```js
 // tasks/index.js
 import start from 'start';
@@ -23,7 +25,7 @@ import * as coverage from 'start-coverage';
 import mocha from 'start-mocha';
 
 export function coverage() {
-    return start(logger)(
+    return start(logger())(
         files('coverage/'),
         clean(),
         files('lib/**/*.js'),
