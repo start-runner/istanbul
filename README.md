@@ -28,7 +28,7 @@ export function coverage() {
         clean(),
         files('lib/**/*.js'),
         coverage.instrument(),
-        files('test/**/*.js')
+        files('test/**/*.js'),
         mocha(),
         coverage.report([ 'lcovonly', 'html', 'text-summary' ]),
         coverage.thresholds({ functions: 100 })
