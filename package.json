@@ -1,14 +1,11 @@
 {
   "name": "start-coverage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Code coverage tasks for Start",
   "keywords": [ "start", "start-task", "coverage", "istanbul" ],
   "homepage": "https://github.com/start-runner/coverage",
   "repository": "start-runner/coverage",
-  "contributors": [
-    "Kir Belevich <kir@soulshine.in> (https://github.com/deepsweet)",
-    "Denis Koltsov <iam@mistadikay.com> (https://github.com/mistadikay)"
-  ],
+  "author": "Kir Belevich <kir@soulshine.in> (https://github.com/deepsweet)",
   "files": [ "build/" ],
   "main": "build/index.js",
   "peerDependencies": {
