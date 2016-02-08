@@ -1,6 +1,8 @@
 [![npm](https://img.shields.io/npm/v/start-coverage.svg?style=flat-square)](https://www.npmjs.com/package/start-coverage)
 [![travis](http://img.shields.io/travis/start-runner/coverage.svg?style=flat-square)](https://travis-ci.org/start-runner/coverage)
+[![coverage](https://img.shields.io/codecov/c/github/start-runner/coverage.svg?style=flat-square)](https://codecov.io/github/start-runner/coverage)
 [![deps](https://img.shields.io/gemnasium/start-runner/coverage.svg?style=flat-square)](https://gemnasium.com/start-runner/coverage)
+[![gitter](https://img.shields.io/badge/gitter-join_chat_%E2%86%92-00d06f.svg?style=flat-square)](https://gitter.im/start-runner/start)
 
 Code coverage tasks for [Start](https://github.com/start-runner/start). Uses [istanbul](https://github.com/gotwarlost/istanbul) by default, but is compatible with [babel-istanbul](https://github.com/ambitioninc/babel-istanbul), [isparta](https://github.com/douglasduteil/isparta), [ibrik](https://github.com/Constellation/ibrik) and so on.
 
@@ -14,12 +16,10 @@ npm i -D start-coverage
 
 The sequence of tasks is simple: "instrument" sources, run tests, report collected code coverage and then check result against the provided thresholds (optional).
 
-Instrument tasks is rely on array of files.
-
 ```js
-// tasks/index.js
 import start from 'start';
 import logger from 'start-simple-logger';
+import files from 'start-files';
 import clean from 'start-clean';
 import * as coverage from 'start-coverage';
 import mocha from 'start-mocha';
@@ -38,13 +38,7 @@ export function coverage() {
 }
 ```
 
-```js
-// package.json
-"scripts": {
-  "task": "babel-node node_modules/.bin/start tasks/",
-  "coverage": "npm run task coverage"
-}
-```
+Instrument tasks is rely on array of files, see [documentation](https://github.com/start-runner/start#readme) for details.
 
 ## Arguments
 
