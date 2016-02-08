@@ -20,14 +20,14 @@ The sequence of tasks is simple: "instrument" sources, run tests, report collect
 
 ```js
 import start from 'start';
-import logger from 'start-simple-logger';
+import reporter from 'start-pretty-reporter';
 import files from 'start-files';
 import clean from 'start-clean';
 import * as coverage from 'start-coverage';
 import mocha from 'start-mocha';
 
 export function coverage() {
-    return start(logger())(
+    return start(reporter())(
         files('coverage/'),
         clean(),
         files('lib/**/*.js'),
