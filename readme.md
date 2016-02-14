@@ -41,7 +41,7 @@ export function coverage() {
 }
 ```
 
-Instrument tasks is rely on array of files, see [documentation](https://github.com/start-runner/start#readme) for details.
+Instrument task relies on array of files, see [documentation](https://github.com/start-runner/start#readme) for details.
 
 ## Arguments
 
