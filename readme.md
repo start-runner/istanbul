@@ -1,18 +1,18 @@
-# start-coverage
+# start-istanbul
 
-[![npm](https://img.shields.io/npm/v/start-coverage.svg?style=flat-square)](https://www.npmjs.com/package/start-coverage)
-[![linux build](https://img.shields.io/travis/start-runner/coverage.svg?label=linux&style=flat-square)](https://travis-ci.org/start-runner/coverage)
-[![windows build](https://img.shields.io/appveyor/ci/start-runner/coverage.svg?label=windows&style=flat-square)](https://ci.appveyor.com/project/start-runner/coverage)
-[![coverage](https://img.shields.io/codecov/c/github/start-runner/coverage.svg?style=flat-square)](https://codecov.io/github/start-runner/coverage)
-[![deps](https://img.shields.io/gemnasium/start-runner/coverage.svg?style=flat-square)](https://gemnasium.com/start-runner/coverage)
+[![npm](https://img.shields.io/npm/v/start-istanbul.svg?style=flat-square)](https://www.npmjs.com/package/start-istanbul)
+[![linux build](https://img.shields.io/travis/start-runner/istanbul.svg?label=linux&style=flat-square)](https://travis-ci.org/start-runner/istanbul)
+[![windows build](https://img.shields.io/appveyor/ci/start-runner/istanbul.svg?label=windows&style=flat-square)](https://ci.appveyor.com/project/start-runner/istanbul)
+[![coverage](https://img.shields.io/codecov/c/github/start-runner/istanbul.svg?style=flat-square)](https://codecov.io/github/start-runner/istanbul)
+[![deps](https://img.shields.io/gemnasium/start-runner/istanbul.svg?style=flat-square)](https://gemnasium.com/start-runner/istanbul)
 [![gitter](https://img.shields.io/badge/gitter-join_chat_%E2%86%92-00d06f.svg?style=flat-square)](https://gitter.im/start-runner/start)
 
-Code coverage tasks for [Start](https://github.com/start-runner/start). Uses [istanbul](https://github.com/gotwarlost/istanbul) by default, but is compatible with [babel-istanbul](https://github.com/ambitioninc/babel-istanbul), [isparta](https://github.com/douglasduteil/isparta), [ibrik](https://github.com/Constellation/ibrik) and so on.
+[Istanbul](https://github.com/gotwarlost/istanbul) tasks for [Start](https://github.com/start-runner/start). Compatible with [babel-istanbul](https://github.com/ambitioninc/babel-istanbul), [isparta](https://github.com/douglasduteil/isparta), [ibrik](https://github.com/Constellation/ibrik) and so on.
 
 ## Install
 
 ```
-npm i -D start-coverage
+npm i -D start-istanbul
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ import start from 'start';
 import reporter from 'start-pretty-reporter';
 import files from 'start-files';
 import clean from 'start-clean';
-import * as coverage from 'start-coverage';
+import * as istanbul from 'start-istanbul';
 import mocha from 'start-mocha';
 
 export function coverage() {
@@ -32,11 +32,11 @@ export function coverage() {
         files('coverage/'),
         clean(),
         files('lib/**/*.js'),
-        coverage.instrument(),
+        istanbul.instrument(),
         files('test/**/*.js'),
         mocha(),
-        coverage.report([ 'lcovonly', 'html', 'text-summary' ]),
-        coverage.thresholds({ functions: 100 })
+        istanbul.report([ 'lcovonly', 'html', 'text-summary' ]),
+        istanbul.thresholds({ functions: 100 })
     );
 }
 ```
@@ -47,21 +47,21 @@ Instrument task relies on array of files, see [documentation](https://github.com
 
 ### instrument
 
-`coverage.instrument(istanbul, options)`
+`istanbul.instrument(istanbul, options)`
 
 * `istanbul` – istanbul-compatible coverage tool, `require('istanbul')` by default
 * `options` – [Instrumenter options](https://gotwarlost.github.io/istanbul/public/apidocs/classes/Instrumenter.html#method_Instrumenter), `{ embedSource: true, noAutoWrap: true }` by default
 
 ### report
 
-`coverage.report(reporters, dir)`
+`istanbul.report(reporters, dir)`
 
 * `reporters` – `[ 'lcovonly', 'text-summary' ]` by default
 * `dir` – output directory, `coverage/` by default
 
 ### thresholds
 
-`coverage.thresholds(thresholds)`
+`istanbul.thresholds(thresholds)`
 
 Same as [istanbul `check-coverage` command](https://github.com/gotwarlost/istanbul#the-check-coverage-command):
 
