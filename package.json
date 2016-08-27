@@ -1,6 +1,6 @@
 {
   "name": "start-istanbul",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "Istanbul tasks for Start",
   "keywords": [ "start", "start-task", "istanbul", "coverage" ],
   "homepage": "https://github.com/start-runner/istanbul",
