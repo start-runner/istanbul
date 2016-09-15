@@ -31,7 +31,7 @@ export function coverage() {
         files('coverage/'),
         clean(),
         files('lib/**/*.js'),
-        istanbul.instrument(),
+        istanbul.instrument({ esModules: true }),
         files('test/**/*.js'),
         mocha(),
         istanbul.report([ 'lcovonly', 'html', 'text-summary' ]),
