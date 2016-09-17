@@ -19,25 +19,25 @@ npm i -D start-istanbul
 The sequence of tasks is simple: "instrument" sources, run tests, report collected code coverage and then check the result against provided thresholds (optional).
 
 ```js
-import start from 'start';
+import Start from 'start';
 import reporter from 'start-pretty-reporter';
 import files from 'start-files';
 import clean from 'start-clean';
 import * as istanbul from 'start-istanbul';
 import mocha from 'start-mocha';
 
-export function coverage() {
-    return start(reporter())(
-        files('coverage/'),
-        clean(),
-        files('lib/**/*.js'),
-        istanbul.instrument({ esModules: true }),
-        files('test/**/*.js'),
-        mocha(),
-        istanbul.report([ 'lcovonly', 'html', 'text-summary' ]),
-        istanbul.thresholds({ functions: 100 })
-    );
-}
+const start = Start(reporter());
+
+export const coverage = () => start(
+    files('coverage/'),
+    clean(),
+    files('lib/**/*.js'),
+    istanbul.instrument({ esModules: true }),
+    files('test/**/*.js'),
+    mocha(),
+    istanbul.report([ 'lcovonly', 'html', 'text-summary' ]),
+    istanbul.thresholds({ functions: 100 })
+);
 ```
 
 Instrument task relies on array of files, see [documentation](https://github.com/start-runner/start#readme) for details.
@@ -48,7 +48,7 @@ Instrument task relies on array of files, see [documentation](https://github.com
 
 `istanbul.instrument(options)`
 
-* `options` – [Istanbul instrumenter options](https://github.com/istanbuljs/istanbul-lib-instrument/blob/master/src/instrumenter.js)
+* `options` – [Istanbul instrumenter options](https://github.com/istanbuljs/istanbul-lib-instrument/blob/master/api.md#instrumenter) (note that you can't change `coverageVariable` at this moment)
 
 ### report
 
