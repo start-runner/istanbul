@@ -2,18 +2,27 @@
   "name": "start-istanbul",
   "version": "2.0.0",
   "description": "Istanbul tasks for Start",
-  "keywords": [ "start", "start-task", "istanbul", "coverage" ],
+  "keywords": [
+    "start",
+    "start-task",
+    "istanbul",
+    "coverage"
+  ],
   "homepage": "https://github.com/start-runner/istanbul",
   "repository": "start-runner/istanbul",
   "author": "Kir Belevich <kir@soulshine.in> (https://github.com/deepsweet)",
-  "files": [ "build/" ],
+  "files": [
+    "build/"
+  ],
   "main": "build/index.js",
   "dependencies": {
+    "babel-runtime": "^6.11.6",
+    "convert-source-map": "^1.3.0",
+    "istanbul-api": "^1.0.0-aplha.10",
+    "istanbul-lib-coverage": "^1.0.0",
     "istanbul-lib-hook": "^1.0.0-alpha.4",
     "istanbul-lib-instrument": "^1.1.0",
-    "istanbul-lib-coverage": "^1.0.0",
-    "istanbul-api": "^1.0.0-aplha.10",
-    "babel-runtime": "^6.11.6"
+    "istanbul-lib-source-maps": "^1.0.1"
   },
   "devDependencies": {
     "start-babel-cli": "^2.0.1",
