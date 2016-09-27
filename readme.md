@@ -1,9 +1,9 @@
 # start-istanbul
 
 [![npm](https://img.shields.io/npm/v/start-istanbul.svg?style=flat-square)](https://www.npmjs.com/package/start-istanbul)
-[![linux build](https://img.shields.io/travis/start-runner/istanbul.svg?label=linux&style=flat-square)](https://travis-ci.org/start-runner/istanbul)
-[![windows build](https://img.shields.io/appveyor/ci/start-runner/istanbul.svg?label=windows&style=flat-square)](https://ci.appveyor.com/project/start-runner/istanbul)
-[![coverage](https://img.shields.io/codecov/c/github/start-runner/istanbul.svg?style=flat-square)](https://codecov.io/github/start-runner/istanbul)
+[![linux build](https://img.shields.io/travis/start-runner/istanbul/master.svg?label=linux&style=flat-square)](https://travis-ci.org/start-runner/istanbul)
+[![windows build](https://img.shields.io/appveyor/ci/start-runner/istanbul/master.svg?label=windows&style=flat-square)](https://ci.appveyor.com/project/start-runner/istanbul)
+[![coverage](https://img.shields.io/codecov/c/github/start-runner/istanbul/master.svg?style=flat-square)](https://codecov.io/github/start-runner/istanbul)
 [![deps](https://img.shields.io/gemnasium/start-runner/istanbul.svg?style=flat-square)](https://gemnasium.com/start-runner/istanbul)
 
 [Istanbul](https://istanbul.js.org/) (ES6+ ready using Babel recently) tasks for [Start](https://github.com/start-runner/start).
