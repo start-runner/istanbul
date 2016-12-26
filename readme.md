@@ -10,8 +10,10 @@
 
 ## Install
 
-```
-npm i -D start-istanbul
+```sh
+npm install --save-dev start-istanbul
+# or
+yarn add --dev start-istanbul
 ```
 
 ## Usage
@@ -29,14 +31,14 @@ import mocha from 'start-mocha';
 const start = Start(reporter());
 
 export const coverage = () => start(
-    files('coverage/'),
-    clean(),
-    files('lib/**/*.js'),
-    istanbul.instrument({ esModules: true }),
-    files('test/**/*.js'),
-    mocha(),
-    istanbul.report([ 'lcovonly', 'html', 'text-summary' ]),
-    istanbul.thresholds({ functions: 100 })
+  files('coverage/'),
+  clean(),
+  files('lib/**/*.js'),
+  istanbul.instrument({ esModules: true }),
+  files('test/**/*.js'),
+  mocha(),
+  istanbul.report([ 'lcovonly', 'html', 'text-summary' ]),
+  istanbul.thresholds({ functions: 100 })
 );
 ```
 
@@ -70,7 +72,7 @@ Only defined keys will be processed, for example:
 
 ```js
 {
-    statements: 100,
-    functions: -10
+  statements: 100,
+  functions: -10
 }
 ```
