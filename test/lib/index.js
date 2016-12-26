@@ -2,68 +2,68 @@ import test from 'tape';
 
 import * as task from '../../lib/';
 
-test('instrument: basic', t => {
-    t.equal(
-        typeof task.instrument,
-        'function',
-        '1st function'
-    );
+test('instrument: basic', (t) => {
+  t.equal(
+    typeof task.instrument,
+    'function',
+    '1st function'
+  );
 
-    t.equal(
-        typeof task.instrument(),
-        'function',
-        '2nd function'
-    );
+  t.equal(
+    typeof task.instrument(),
+    'function',
+    '2nd function'
+  );
 
-    t.equal(
-        typeof task.instrument()(),
-        'function',
-        '3rd function'
-    );
+  t.equal(
+    typeof task.instrument()(),
+    'function',
+    '3rd function'
+  );
 
-    t.end();
+  t.end();
 });
 
-test('report: basic', t => {
-    t.equal(
-        typeof task.report,
-        'function',
-        '1st function'
-    );
+test('report: basic', (t) => {
+  t.equal(
+    typeof task.report,
+    'function',
+    '1st function'
+  );
 
-    t.equal(
-        typeof task.report(),
-        'function',
-        '2nd function'
-    );
+  t.equal(
+    typeof task.report(),
+    'function',
+    '2nd function'
+  );
 
-    t.equal(
-        typeof task.report()(),
-        'function',
-        '3rd function'
-    );
+  t.equal(
+    typeof task.report()(),
+    'function',
+    '3rd function'
+  );
 
-    t.end();
+  t.end();
 });
 
-test('thresholds: basic', t => {
-    t.equal(
-        typeof task.thresholds,
-        'function',
-        '1st function'
-    );
+test('thresholds: basic', (t) => {
+  t.equal(
+    typeof task.thresholds,
+    'function',
+    '1st function'
+  );
 
-    t.equal(
-        typeof task.thresholds(),
-        'function',
-        '2nd function'
-    );
+  t.equal(
+    typeof task.thresholds(),
+    'function',
+    '2nd function'
+  );
 
-    t.equal(
-        typeof task.thresholds()(),
-        'function',
-        '3rd function'
-    );
+  t.equal(
+    typeof task.thresholds()(),
+    'function',
+    '3rd function'
+  );
 
-    t.end();
+  t.end();
 });
