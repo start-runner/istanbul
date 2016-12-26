@@ -16,7 +16,6 @@
   ],
   "main": "build/index.js",
   "dependencies": {
-    "babel-runtime": "^6.11.6",
     "convert-source-map": "^1.3.0",
     "istanbul-api": "^1.0.0-aplha.10",
     "istanbul-lib-coverage": "^1.0.0",
@@ -25,18 +24,15 @@
     "istanbul-lib-source-maps": "^1.0.1"
   },
   "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-preset-start": "^0.1.0",
+    "eslint-config-rebem": "^1.1.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "husky": "^0.11.6",
+    "sinon": "^1.17.5",
     "start-babel-cli": "^3.0.0",
     "start-start-preset": "^2.0.0",
-    "babel-preset-es2015": "^6.13.2",
-    "babel-plugin-transform-runtime": "^6.12.0",
-    "babel-plugin-transform-object-rest-spread": "^6.8.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-eslint": "^6.1.2",
-    "eslint-plugin-babel": "^3.3.0",
-    "eslint-config-rebem": "^1.1.0",
-    "tape": "^4.6.0",
-    "sinon": "^1.17.5",
-    "husky": "^0.11.6"
+    "tape": "^4.6.0"
   },
   "scripts": {
     "start": "start-runner -p start-start-preset",
@@ -44,7 +40,7 @@
     "prepublish": "npm start build"
   },
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">=4"
   },
   "license": "MIT"
 }
