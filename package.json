@@ -21,7 +21,7 @@
     "istanbul-lib-coverage": "^1.0.0",
     "istanbul-lib-hook": "^1.0.0-alpha.4",
     "istanbul-lib-instrument": "^1.1.0",
-    "istanbul-lib-source-maps": "^1.0.1"
+    "istanbul-lib-source-maps": "^1.0.2"
   },
   "devDependencies": {
     "babel-preset-start": "^0.1.0",
